@@ -1,0 +1,20 @@
+# Config file
+
+pre:
+  - name: start
+    command: 'echo "Firing config manager.."'
+
+subrepos:
+  - name: vim
+    origin: git@github.com:shivnshu/vim-conf.git
+    location: vim
+  - name: emacs
+    origin: git@github.com:shivnshu/emacs-conf.git
+    location: emacs
+  - name: xmonad
+    origin: git@github.com:shivnshu/xmonad-conf.git
+    location: xmonad
+
+post:
+  - name: finish
+    command: 'echo "Everything done!!"'
