@@ -1,19 +1,51 @@
 # Config file
 
+# Execute before starting
 pre:
-  - name: start
-    command: 'echo "Firing config manager.."'
+  - name: TestGithubAccess
+    command: 'ssh git@github.com 2>&1 | grep shivnshu'
 
 subrepos:
   - name: vim
     origin: git@github.com:shivnshu/vim-conf.git
-    location: vim
+    location: Configs/vim
   - name: emacs
     origin: git@github.com:shivnshu/emacs-conf.git
-    location: emacs
+    location: Configs/emacs
   - name: xmonad
     origin: git@github.com:shivnshu/xmonad-conf.git
-    location: xmonad
+    location: Configs/xmonad
+
+directories:
+  - name: vim
+    placed: Configs/vim
+    location: $HOME/.vim
+  - name: nvim
+    placed: Configs/vim
+    location: $HOME/.config/nvim
+  - name: emacs
+    placed: Configs/emacs
+    location: $HOME/.emacs.d
+  - name: scripts
+    placed: Scripts
+    location: $HOME/Scripts
+  - name: taffybar
+    placed: Configs/taffybar
+    location: $HOME/.config/taffybar
+  - name: termite
+    placed: Configs/termite
+    location: $HOME/.config/termite
+
+files:
+  - name: zshrc
+    placed: Configs/zshrc
+    location: $HOME/.zshrc
+  - name: Xresources
+    placed: Configs/Xresources
+    location: $HOME/.Xresources
+  - name: xinitrc
+    placed: Configs/xinitrc
+    location: $HOME/.xinitrc
 
 post:
   - name: finish

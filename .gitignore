@@ -1,0 +1,6 @@
+*.swp
+
+# Github repos
+Configs/vim
+Configs/emacs
+Configs/xmonad

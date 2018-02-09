@@ -25,7 +25,7 @@ export WM=xmonad
 feh --bg-scale /home/shivnshu/Pictures/wallpaper.png
 
 # fix java issues
-#wmname LG3D
+wmname LG3D
 
 # Fire up apps
 compton -f &

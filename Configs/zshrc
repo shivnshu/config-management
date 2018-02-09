@@ -97,6 +97,7 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias android-studio=/home/shivnshu/android-studio/bin/studio.sh
 
 DEFAULT_USER=shivnshu
 source /home/shivnshu/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
