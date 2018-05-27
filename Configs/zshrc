@@ -1,9 +1,10 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-  export PATH=$PATH:~/.local/bin
+export PATH=$PATH:~/.local/bin
+export PATH=$PATH:~/.gem/ruby/2.5.0/bin
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/shivnshu/.oh-my-zsh
+export ZSH=/home/shivnshu/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -98,6 +99,15 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias android-studio=/home/shivnshu/android-studio/bin/studio.sh
+alias vim=/usr/bin/nvim
+alias burpsuite='java -jar /opt/burpsuite/BurpHelper.jar'
 
 DEFAULT_USER=shivnshu
 source /home/shivnshu/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# WeeChall for WarGames
+export WECHALLUSER="shivnshu"
+export WECHALLTOKEN="60863-99C31-7675A-A0BC5-2D76B-1105A"
+
+# Config folder location
+export CONFIG_FOLDER="~/Configs/config-management/Configs"

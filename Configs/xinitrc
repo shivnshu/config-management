@@ -30,7 +30,7 @@ wmname LG3D
 # Fire up apps
 compton -f &
 #guake &
-(sleep 30; slack) &
+#(sleep 30; slack) &
 #thunderbird&
 blueman-applet&
 #urxvtd --quiet --opendisplay --fork
