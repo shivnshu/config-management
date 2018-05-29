@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Depend:
 #     https://github.com/oblique/create_ap

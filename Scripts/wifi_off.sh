@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 interface=$(rfkill list | grep -E "(LAN)" | grep -E "^[0-9]" -o)
 

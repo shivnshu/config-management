@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 interface="rtl8723be"
 
