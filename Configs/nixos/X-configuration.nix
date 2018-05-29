@@ -18,8 +18,9 @@
 	services.xserver.desktopManager.xterm.enable = false;
 	services.xserver.desktopManager.default = "none";
 
-	services.xserver.displayManager.slim.enable = true;
+	# services.xserver.displayManager.slim.enable = true;
 	# services.xserver.displayManager.slim.defaultUser = "shivnshu";
+	services.xserver.displayManager.lightdm.enable = true;
 
 	# TouchScreen
 	# services.xserver.wacom.enable = true;
@@ -28,4 +29,6 @@
 	services.xserver.libinput.enable = true;
 	services.xserver.libinput.tapping = true;
 
+	# Backlight
+	programs.light.enable = true;
 }

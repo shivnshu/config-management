@@ -99,15 +99,15 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias android-studio=/home/shivnshu/android-studio/bin/studio.sh
-alias vim=/usr/bin/nvim
+alias vim='/usr/bin/env nvim'
 alias burpsuite='java -jar /opt/burpsuite/BurpHelper.jar'
 
 DEFAULT_USER=shivnshu
-source /home/shivnshu/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /home/shivnshu/config-management/Configs/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # WeeChall for WarGames
 export WECHALLUSER="shivnshu"
 export WECHALLTOKEN="60863-99C31-7675A-A0BC5-2D76B-1105A"
 
 # Config folder location
-export CONFIG_FOLDER="~/Configs/config-management/Configs"
+export CONFIG_FOLDER="~/config-management/Configs"

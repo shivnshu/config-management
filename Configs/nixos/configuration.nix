@@ -14,7 +14,7 @@
 
 	# Select internationalisation properties.
 	i18n = {
-		# consoleFont = "Liberation16";
+		consoleFont = "Lat2-Terminus16";
 		consoleKeyMap = "us";
 		defaultLocale = "en_US.UTF-8";
 	};
@@ -28,13 +28,15 @@
 		wget vim neovim
 		taffybar
 		networkmanagerapplet
+		blueman
+		volnoti
+		rofi
 		pavucontrol
 		feh
 		vlc
 		firefox
 		emacs
 		stack
-		# google-chrome
 		nmap
 		compton
 		termite tmux zsh
@@ -48,11 +50,9 @@
 		fadeDelta       = 4;
 	};
 
-	nixpkgs.config = {
-		allowUnfree = true;
-	};
+	nixpkgs.config.allowUnfree = true;
 
-	# nixpkgs.config.firefox.enableAdobeFlash = true;
+	nixpkgs.config.firefox.enableAdobeFlash = true;
 
 	# Some programs need SUID wrappers, can be configured further or are
 	# started in user sessions.
@@ -73,6 +73,14 @@
 	# Sound
 	hardware.pulseaudio.enable = true;
 	hardware.pulseaudio.support32Bit = true;
+	hardware.pulseaudio.package = pkgs.pulseaudioFull;
+
+	# Bluetooth
+	hardware.bluetooth.enable = true;
+
+	fonts.fonts = with pkgs; [
+		powerline-fonts
+	];
 
 	# Define a user account. Don't forget to set a password with ‘passwd’.
 	users.extraUsers.shivnshu = {
@@ -81,7 +89,7 @@
 		uid = 1000;
 		shell = pkgs.zsh;
 		createHome = true;
-		extraGroups = [ "wheel" "networkmanager" ];
+		extraGroups = [ "wheel" "networkmanager" "audio"];
   	};
 	# users.extraUsers.guest = {
 	#   isNormalUser = true;

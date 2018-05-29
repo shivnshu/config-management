@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Using Nvidia for X server
+#xrandr --setprovideroutputsource modesetting NVIDIA-0
+#xrandr --auto
+#xrandr --dpi 96 # fix high resolution
+
+# Load resources
+xrdb -merge .Xresources
+
+feh --bg-scale /home/shivnshu/Pictures/wallpaper.png
+
+# fix java issues
+#wmname LG3D
+
+# Fire up apps
+#compton -f &
+#guake &
+#(sleep 30; slack) &
+#thunderbird&
+nm-applet&
+blueman-applet&
+#urxvtd --quiet --opendisplay --fork
+
+#sudo -b nohup nvidia-docker-plugin > /tmp/nvidia-docker.log
