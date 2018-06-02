@@ -20,35 +20,41 @@ subrepos:
     location: Configs/zsh-syntax-highlighting
 
 directories:
-  - name: vim
-    placed: Configs/vim
-    location: $HOME/.vim
-  - name: nvim
-    placed: Configs/vim
-    location: $HOME/.config/nvim
   - name: emacs
     placed: Configs/emacs
     location: $HOME/.emacs.d
-  - name: scripts
-    placed: Scripts
-    location: $HOME/Scripts
+  - name: nixos
+    placed: Configs/nixos
+    location: /etc/nixos
   - name: taffybar
     placed: Configs/taffybar
     location: $HOME/.config/taffybar
   - name: termite
     placed: Configs/termite
     location: $HOME/.config/termite
+  - name: vim
+    placed: Configs/vim
+    location: $HOME/.vim
+  - name: nvim
+    placed: Configs/vim
+    location: $HOME/.config/nvim
+  - name: xmonad
+    placed: Configs/xmonad
+    location: $HOME/.xmonad
 
 files:
-  - name: zshrc
-    placed: Configs/zshrc
-    location: $HOME/.zshrc
-  - name: Xresources
-    placed: Configs/Xresources
-    location: $HOME/.Xresources
   - name: xinitrc
     placed: Configs/xinitrc
     location: $HOME/.xinitrc
+  - name: xprofile
+    placed: Configs/xprofile
+    location: $HOME/.xprofile
+  - name: Xresources
+    placed: Configs/Xresources
+    location: $HOME/.Xresources
+  - name: zshrc
+    placed: Configs/zshrc
+    location: $HOME/.zshrc
 
 post:
   - name: finish

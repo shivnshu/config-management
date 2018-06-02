@@ -42,3 +42,21 @@ if __name__ == "__main__":
         _origin = repo['origin']
         print("Cloning " + repo['name'])
         subprocess.call(["git", "clone", _origin, _location])
+
+    # Softlinking directories
+    for direc in cfgObject['directories']:
+        _placed = os.path.join(conf_dir, os.path.expandvars(direc['placed']))
+        _location = direc['location']
+        print("Softlinking " + direc['name'])
+        subprocess.call(["ln", "-s", _placed, _location])
+
+    # Softlinking files
+    for f in cfgObject['files']:
+        _placed = os.path.join(conf_dir, os.path.expandvars(f['_placed']))
+        _location = f['location']
+        print("Softlinking " + f['name'])
+        subprocess.call(["ln", "-s", _placed, _location])
+
+    # Finishing Tasks
+    for post_task in cfgObject['post']:
+        executeCommand(post_task, conf_dir)
