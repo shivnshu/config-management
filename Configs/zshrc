@@ -3,8 +3,11 @@
 export PATH=$PATH:~/.local/bin
 export PATH=$PATH:~/.gem/ruby/2.5.0/bin
 
+# Config folder location
+export CONFIG_FOLDER="$HOME/config-management/Configs"
+
 # Path to your oh-my-zsh installation.
-export ZSH=/home/shivnshu/.oh-my-zsh
+export ZSH=$CONFIG_FOLDER/oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -78,11 +81,11 @@ source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -96,18 +99,13 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 alias android-studio=/home/shivnshu/android-studio/bin/studio.sh
 alias vim='/usr/bin/env nvim'
 alias burpsuite='java -jar /opt/burpsuite/BurpHelper.jar'
 
 DEFAULT_USER=shivnshu
-source /home/shivnshu/config-management/Configs/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $CONFIG_FOLDER/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # WeeChall for WarGames
 export WECHALLUSER="shivnshu"
 export WECHALLTOKEN="60863-99C31-7675A-A0BC5-2D76B-1105A"
-
-# Config folder location
-export CONFIG_FOLDER="~/config-management/Configs"

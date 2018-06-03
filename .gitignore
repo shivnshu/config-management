@@ -5,6 +5,7 @@ Configs/vim
 Configs/emacs
 Configs/xmonad
 Configs/zsh-syntax-highlighting
+Configs/oh-my-zsh
 
 Configs/nixos/*
 !Configs/nixos/*.nix
