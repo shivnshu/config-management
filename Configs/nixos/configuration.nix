@@ -48,6 +48,7 @@
                 python36Packages.ipython
                 weechat
                 gdb
+                gnupg
 	];
 
 	services.compton = {
