@@ -6,6 +6,7 @@ Configs/emacs
 Configs/xmonad
 Configs/zsh-syntax-highlighting
 Configs/oh-my-zsh
+Configs/gdb-peda
 
 Configs/nixos/*
 !Configs/nixos/*.nix

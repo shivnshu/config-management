@@ -25,7 +25,9 @@
 	# List packages installed in system profile. To search by name, run:
 	# $ nix-env -qaP | grep wget
 	environment.systemPackages = with pkgs; [
-		wget vim neovim
+		wget
+                vim
+                neovim
 		taffybar
 		networkmanagerapplet
 		blueman
@@ -39,7 +41,13 @@
 		stack
 		nmap
 		compton
-		termite tmux zsh
+		termite
+                tmux
+                zsh
+                python3
+                python36Packages.ipython
+                weechat
+                gdb
 	];
 
 	services.compton = {

@@ -21,11 +21,17 @@ subrepos:
   - name: oh-my-zsh
     origin: git@github.com:robbyrussell/oh-my-zsh.git
     location: Configs/oh-my-zsh
+  - name: gdb-peda
+    origin: git@github.com:longld/peda.git
+    location: Configs/gdb-peda
 
 directories:
   - name: emacs
     placed: Configs/emacs
     location: $HOME/.emacs.d
+  - name: gdb-peda
+    placed: Configs/gdb-peda
+    location: $HOME/.gdb-peda
   - name: nixos
     placed: Configs/nixos
     location: /etc/nixos
