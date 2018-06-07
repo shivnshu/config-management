@@ -8,7 +8,7 @@
 # Load resources
 xrdb -merge .Xresources
 
-feh --bg-scale /home/shivnshu/Pictures/wallpaper.png
+feh --bg-scale /home/shivnshu/Pictures/wallpaper.jpg
 
 # fix java issues
 #wmname LG3D

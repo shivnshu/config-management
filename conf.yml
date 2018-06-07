@@ -24,6 +24,9 @@ subrepos:
   - name: gdb-peda
     origin: git@github.com:longld/peda.git
     location: Configs/gdb-peda
+  - name: zsh-nix-shell
+    origin: git@github.com:chisui/zsh-nix-shell.git
+    location: $ZSH_CUSTOM/plugins/nix-shell
 
 directories:
   - name: emacs
@@ -35,6 +38,9 @@ directories:
   - name: nixos
     placed: Configs/nixos
     location: /etc/nixos
+  - name: nixpkgs
+    placed: Configs/nixpkgs
+    location: $HOME/.nixpkgs
   - name: taffybar
     placed: Configs/taffybar
     location: $HOME/.config/taffybar
@@ -64,6 +70,9 @@ files:
   - name: zshrc
     placed: Configs/zshrc
     location: $HOME/.zshrc
+  - name: agnoster-nix-theme
+    placed: Configs/agnoster-nix.zsh-theme
+    location: $ZSH_CUSTOM/themes/agnoster-nix.zsh-theme
 
 post:
   - name: finish

@@ -26,8 +26,8 @@
 	# $ nix-env -qaP | grep wget
 	environment.systemPackages = with pkgs; [
 		wget
-                vim
-                neovim
+        vim
+        neovim
 		taffybar
 		networkmanagerapplet
 		blueman
@@ -38,18 +38,33 @@
 		vlc
 		firefox
 		emacs
-		stack
 		nmap
 		compton
 		termite
-                tmux
-                zsh
-                python3
-                python36Packages.ipython
-                weechat
-                gdb
-                gnupg
+        tmux
+        zsh
+        python3
+        python36Packages.ipython
+        python36Packages.setuptools
+        python36Packages.jedi
+        weechat
+        gdb
+        gnupg
+        gnome3.gvfs # for nautilus trash
+        gnome3.nautilus
+        deluge
+        iotop
+        evince
+        file
+        bind
+        tcpdump
+        qemu
+        virtmanager
+        xdg_utils
+        ettercap
 	];
+
+    nixpkgs.config.gnome3.gvfs.lightWeight = false;
 
 	services.compton = {
 		enable          = true;
@@ -63,17 +78,14 @@
 
 	nixpkgs.config.firefox.enableAdobeFlash = true;
 
-	# Some programs need SUID wrappers, can be configured further or are
-	# started in user sessions.
+    programs.wireshark.enable = true;
+    programs.wireshark.package = pkgs.wireshark;
+
 	programs.bash.enableCompletion = true;
-	# programs.mtr.enable = true;
-	# programs.gnupg.agent = { enable = true; enableSSHSupport = true; };
 
 	# List services that you want to enable:
-
-	# Enable CUPS to print documents.
-	# services.printing.enable = true;
-
+    services.emacs.enable = true;
+    services.gnome3.gvfs.enable = true;
 
 	# Required for taffybar
 	services.upower.enable = true;
@@ -87,6 +99,10 @@
 	# Bluetooth
 	hardware.bluetooth.enable = true;
 
+    # Virtualisation
+    virtualisation.docker.enable = true;
+    virtualisation.libvirtd.enable = true;
+
 	fonts.fonts = with pkgs; [
 		powerline-fonts
 	];
@@ -98,7 +114,7 @@
 		uid = 1000;
 		shell = pkgs.zsh;
 		createHome = true;
-		extraGroups = [ "wheel" "networkmanager" "audio"];
+		extraGroups = [ "wheel" "networkmanager" "audio" "wireshark" "libvirtd" "docker" ];
   	};
 	# users.extraUsers.guest = {
 	#   isNormalUser = true;

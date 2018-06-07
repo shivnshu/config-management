@@ -1,4 +1,5 @@
 *.swp
+*~
 
 # Github repos
 Configs/vim
