@@ -15,18 +15,12 @@ subrepos:
   - name: xmonad
     origin: git@github.com:shivnshu/xmonad-conf.git
     location: Configs/xmonad
-  - name: zsh-syntax-highlighting
-    origin: git@github.com:zsh-users/zsh-syntax-highlighting.git
-    location: Configs/zsh-syntax-highlighting
-  - name: oh-my-zsh
-    origin: git@github.com:robbyrussell/oh-my-zsh.git
-    location: Configs/oh-my-zsh
   - name: gdb-peda
     origin: git@github.com:longld/peda.git
     location: Configs/gdb-peda
-  - name: zsh-nix-shell
-    origin: git@github.com:chisui/zsh-nix-shell.git
-    location: $ZSH_CUSTOM/plugins/nix-shell
+  - name: zprezto
+    origin: git@github.com:sorin-ionescu/prezto.git
+    location: Configs/zsh/zprezto
 
 directories:
   - name: emacs
@@ -56,6 +50,9 @@ directories:
   - name: xmonad
     placed: Configs/xmonad
     location: $HOME/.xmonad
+  - name: zprezto
+    placed: Configs/zsh/zprezto
+    location: $HOME/.zprezto
 
 files:
   - name: xinitrc
@@ -67,12 +64,24 @@ files:
   - name: Xresources
     placed: Configs/Xresources
     location: $HOME/.Xresources
+  - name: zlogin
+    placed: Configs/zsh/zlogin
+    location: $HOME/.zlogin
+  - name: zlogout
+    placed: Configs/zsh/zlogout
+    location: $HOME/.zlogout
+  - name: zpreztorc
+    placed: Configs/zsh/zpreztorc
+    location: $HOME/.zpreztorc
+  - name: zprofile
+    placed: Configs/zsh/zprofile
+    location: $HOME/.zprofile
+  - name: zshenv
+    placed: Configs/zsh/zshenv
+    location: $HOME/.zshenv
   - name: zshrc
-    placed: Configs/zshrc
+    placed: Configs/zsh/zshrc
     location: $HOME/.zshrc
-  - name: agnoster-nix-theme
-    placed: Configs/agnoster-nix.zsh-theme
-    location: $ZSH_CUSTOM/themes/agnoster-nix.zsh-theme
 
 post:
   - name: finish

@@ -25,11 +25,16 @@
 	# List packages installed in system profile. To search by name, run:
 	# $ nix-env -qaP | grep wget
 	environment.systemPackages = with pkgs; [
+        busybox
+        binutils-unwrapped
 		wget
         vim
         neovim
 		taffybar
+        wirelesstools
+        usbutils
 		networkmanagerapplet
+        networkmanager-fortisslvpn
 		blueman
 		volnoti
 		rofi
@@ -45,6 +50,7 @@
         zsh
         python3
         python36Packages.ipython
+        python36Packages.virtualenv
         python36Packages.setuptools
         python36Packages.jedi
         weechat
@@ -52,12 +58,14 @@
         gnupg
         gnome3.gvfs # for nautilus trash
         gnome3.nautilus
+        gnome3.gedit
         deluge
         iotop
         evince
         file
         bind
         tcpdump
+        fping
         qemu
         virtmanager
         xdg_utils
@@ -82,6 +90,7 @@
     programs.wireshark.package = pkgs.wireshark;
 
 	programs.bash.enableCompletion = true;
+    programs.zsh.enable = true;
 
 	# List services that you want to enable:
     services.emacs.enable = true;
@@ -101,7 +110,8 @@
 
     # Virtualisation
     virtualisation.docker.enable = true;
-    virtualisation.libvirtd.enable = true;
+    virtualisation.docker.enableOnBoot = false;
+    virtualisation.libvirtd.enable = false;
 
 	fonts.fonts = with pkgs; [
 		powerline-fonts

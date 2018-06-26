@@ -49,7 +49,7 @@ if __name__ == "__main__":
                 continue
             shutil.rmtree(_location)
         print("Cloning " + repo['name'])
-        subprocess.call(["git", "clone", _origin, _location])
+        subprocess.call(["git", "clone", "--recursive", _origin, _location])
 
     # Softlinking directories
     for direc in cfgObject['directories']:
