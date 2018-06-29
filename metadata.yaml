@@ -1,0 +1,85 @@
+# Config file
+
+# Execute before starting
+pre:
+  - name: TestGithubAccess
+    command: 'ssh git@github.com 2>&1 | grep shivnshu'
+
+subrepos:
+  - name: vim
+    origin: git@github.com:shivnshu/vim-conf.git
+    location: configs/vim
+  - name: emacs
+    origin: git@github.com:shivnshu/emacs-conf.git
+    location: configs/emacs
+  - name: xmonad
+    origin: git@github.com:shivnshu/xmonad-conf.git
+    location: configs/xmonad
+  - name: gdb-peda
+    origin: git@github.com:longld/peda.git
+    location: configs/gdb-peda
+
+directories:
+  - name: emacs
+    placed: configs/emacs
+    location: $HOME/.emacs.d
+  - name: gdb-peda
+    placed: configs/gdb-peda
+    location: $HOME/.gdb-peda
+  - name: nixos
+    placed: configs/nixos
+    location: /etc/nixos
+  - name: nixpkgs
+    placed: configs/nixpkgs
+    location: $HOME/.nixpkgs
+  - name: taffybar
+    placed: configs/taffybar
+    location: $HOME/.config/taffybar
+  - name: termite
+    placed: configs/termite
+    location: $HOME/.config/termite
+  - name: vim
+    placed: configs/vim
+    location: $HOME/.vim
+  - name: nvim
+    placed: configs/vim
+    location: $HOME/.config/nvim
+  - name: xmonad
+    placed: configs/xmonad
+    location: $HOME/.xmonad
+  - name: zprezto
+    placed: configs/zsh/zprezto
+    location: $HOME/.zprezto
+
+files:
+  - name: xinitrc
+    placed: configs/xinitrc
+    location: $HOME/.xinitrc
+  - name: xprofile
+    placed: configs/xprofile
+    location: $HOME/.xprofile
+  - name: Xresources
+    placed: configs/Xresources
+    location: $HOME/.Xresources
+  - name: zlogin
+    placed: configs/zsh/zlogin
+    location: $HOME/.zlogin
+  - name: zlogout
+    placed: configs/zsh/zlogout
+    location: $HOME/.zlogout
+  - name: zpreztorc
+    placed: configs/zsh/zpreztorc
+    location: $HOME/.zpreztorc
+  - name: zprofile
+    placed: configs/zsh/zprofile
+    location: $HOME/.zprofile
+  - name: zshenv
+    placed: configs/zsh/zshenv
+    location: $HOME/.zshenv
+  - name: zshrc
+    placed: configs/zsh/zshrc
+    location: $HOME/.zshrc
+
+post:
+  - name: finish
+    command: 'echo "Everything done!!"'

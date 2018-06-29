@@ -24,9 +24,9 @@ if __name__ == "__main__":
     print("Firing config manager..")
     if input("Are you sure? (y/n): ") != "y":
         sys.exit(0)
-    configFileLocation = 'conf.yml'
+    configFileLocation = 'metadata.yaml'
     if len(sys.argv) == 1:
-        print("Using default: conf.yml config")
+        print("Using default: metadata.yaml config")
     else:
         configFileLocation = sys.argv[1]
         if len(sys.argv) != 2:
@@ -55,11 +55,10 @@ if __name__ == "__main__":
     for direc in cfgObject['directories']:
         _placed = os.path.join(conf_dir, os.path.expandvars(direc['placed']))
         _location = os.path.expandvars(direc['location'])
-        if os.path.exists(_location):
-            print("Directory for " + direc['name'] + " already exists.")
-            if input("[R]eplace?: ") != "R":
-                continue
-            shutil.rmtree(_location)
+        try:
+            os.remove(_location)
+        except:
+            pass
         print("Softlinking " + direc['name'])
         subprocess.call(["ln", "-s", _placed, _location])
 
@@ -67,11 +66,10 @@ if __name__ == "__main__":
     for f in cfgObject['files']:
         _placed = os.path.join(conf_dir, os.path.expandvars(f['placed']))
         _location = os.path.expandvars(f['location'])
-        if os.path.exists(_location):
-            print("File for " + f['name'] + " already exists.")
-            if input("[R]eplace?: ") != "R":
-                continue
+        try:
             os.remove(_location)
+        except:
+            pass
         print("Softlinking " + f['name'])
         subprocess.call(["ln", "-s", _placed, _location])
 

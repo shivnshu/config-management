@@ -2,11 +2,10 @@
 *~
 
 # Github repos
-Configs/vim
-Configs/emacs
-Configs/xmonad
-Configs/gdb-peda
-Configs/zsh/zprezto
+configs/vim
+configs/emacs
+configs/xmonad
+configs/gdb-peda
 
-Configs/nixos/*
-!Configs/nixos/*.nix
+configs/nixos/*
+!configs/nixos/*.nix

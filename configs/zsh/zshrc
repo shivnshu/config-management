@@ -1,0 +1,14 @@
+setopt EXTENDED_GLOB
+
+
+alias vi=nvim
+alias vim=nvim
+alias svim="sudo -E nvim"
+
+source ~/.zprezto/init.zsh
+
+# prompt cloud →
+
+export CONFIG_FOLDER=$HOME/config-management/configs
+export EDITOR="nvim"
+export VISUAL="nvim"
