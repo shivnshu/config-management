@@ -44,6 +44,9 @@ directories:
   - name: nvim
     placed: configs/vim
     location: $HOME/.config/nvim
+  - name: scripts
+    placed: scripts
+    location: $HOME/bin
   - name: zprezto
     placed: configs/zsh/zprezto
     location: $HOME/.zprezto

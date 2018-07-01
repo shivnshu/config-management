@@ -15,6 +15,7 @@
               pamixer
               volnoti
               pavucontrol
+              imagemagick
             ] ++ my_network_tools;
         };
 
