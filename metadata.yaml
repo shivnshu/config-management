@@ -12,9 +12,6 @@ subrepos:
   - name: emacs
     origin: git@github.com:shivnshu/emacs-conf.git
     location: configs/emacs
-  - name: xmonad
-    origin: git@github.com:shivnshu/xmonad-conf.git
-    location: configs/xmonad
   - name: gdb-peda
     origin: git@github.com:longld/peda.git
     location: configs/gdb-peda
@@ -23,6 +20,12 @@ directories:
   - name: emacs
     placed: configs/emacs
     location: $HOME/.emacs.d
+  - name: fonts
+    placed: fonts
+    location: $HOME/.local/share/fonts
+  - name: i3
+    placed: configs/i3
+    location: $HOME/.config/i3
   - name: gdb-peda
     placed: configs/gdb-peda
     location: $HOME/.gdb-peda
@@ -32,9 +35,6 @@ directories:
   - name: nixpkgs
     placed: configs/nixpkgs
     location: $HOME/.nixpkgs
-  - name: taffybar
-    placed: configs/taffybar
-    location: $HOME/.config/taffybar
   - name: termite
     placed: configs/termite
     location: $HOME/.config/termite
@@ -44,9 +44,6 @@ directories:
   - name: nvim
     placed: configs/vim
     location: $HOME/.config/nvim
-  - name: xmonad
-    placed: configs/xmonad
-    location: $HOME/.xmonad
   - name: zprezto
     placed: configs/zsh/zprezto
     location: $HOME/.zprezto

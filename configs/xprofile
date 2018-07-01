@@ -8,7 +8,9 @@
 # Load resources
 xrdb -merge .Xresources
 
-feh --bg-scale /home/shivnshu/Pictures/wallpaper.jpg
+#eh --bg-scale /home/shivnshu/Pictures/wallpaper.jpg
+
+export TERMINAL=termite
 
 # fix java issues
 #wmname LG3D
@@ -18,10 +20,10 @@ feh --bg-scale /home/shivnshu/Pictures/wallpaper.jpg
 #guake &
 #(sleep 30; slack) &
 #thunderbird&
-xmonad&
-taffybar&
-nm-applet&
-blueman-applet&
+#xmonad&
+#taffybar&
+#nm-applet&
+#blueman-applet&
 #urxvtd --quiet --opendisplay --fork
 
 #sudo -b nohup nvidia-docker-plugin > /tmp/nvidia-docker.log

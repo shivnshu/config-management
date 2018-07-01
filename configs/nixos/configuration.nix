@@ -25,59 +25,14 @@
     # List packages installed in system profile. To search by name, run:
     # $ nix-env -qaP | grep wget
     environment.systemPackages = with pkgs; [
-        binutils-unwrapped
-		glibcLocales
         wget
         vim
-        neovim
-        taffybar
         networkmanagerapplet
-        networkmanager-fortisslvpn
         blueman
-        volnoti
-        rofi
-        pavucontrol
         feh
-        vlc
-        firefox
-        emacs
-        compton
-        termite
-        tmux
-        zsh
-        python3
-        python36Packages.ipython
-        python36Packages.virtualenv
-        python36Packages.setuptools
-        python36Packages.jedi
-        gnupg
-        gnome3.gvfs # for nautilus trash
-        gnome3.nautilus
-        gnome3.gedit
-        deluge
-        iotop
-        evince
-        file
-        bind
-        tcpdump
-        fping
         qemu
-        virtmanager
+        #rxvt_unicode
     ];
-
-    nixpkgs.config.gnome3.gvfs.lightWeight = false;
-
-    services.compton = {
-        enable          = true;
-        fade            = true;
-        inactiveOpacity = "0.9";
-        shadow          = true;
-        fadeDelta       = 4;
-    };
-
-    nixpkgs.config.allowUnfree = true;
-
-    nixpkgs.config.firefox.enableAdobeFlash = true;
 
     programs.wireshark.enable = true;
     programs.wireshark.package = pkgs.wireshark;
@@ -87,11 +42,16 @@
 
     # List services that you want to enable:
     services.emacs.enable = true;
-    services.gnome3.gvfs.enable = true;
 
-    # Required for taffybar
-    services.upower.enable = true;
-    systemd.services.upower.enable = true;
+    #systemd.user.services."urxvtd" = {
+        #enable = true;
+        #description = "rxvt unicode daemon";
+        #wantedBy = [ "default.target" ];
+        #path = [ pkgs.rxvt_unicode ];
+        #serviceConfig.Restart = "always";
+        #serviceConfig.RestartSec = 2;
+        #serviceConfig.ExecStart = "${pkgs.rxvt_unicode}/bin/urxvtd -q -o";
+    #};
 
     # Sound
     hardware.pulseaudio.enable = true;
@@ -103,13 +63,8 @@
 
     # Virtualisation
     virtualisation.docker.enable = true;
-    virtualisation.docker.enableOnBoot = false;
+    virtualisation.docker.enableOnBoot = true;
     virtualisation.libvirtd.enable = true;
-
-    fonts.fonts = with pkgs; [
-        powerline-fonts
-        source-code-pro
-    ];
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.extraUsers.shivnshu = {
@@ -120,10 +75,6 @@
         createHome = true;
         extraGroups = [ "wheel" "networkmanager" "audio" "wireshark" "libvirtd" "docker" ];
     };
-    # users.extraUsers.guest = {
-    #   isNormalUser = true;
-    #   uid = 1000;
-    # };
 
     # This value determines the NixOS release with which your system is to be
     # compatible, in order to avoid breaking some software such as database
