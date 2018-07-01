@@ -18,6 +18,8 @@ feh --bg-scale /home/shivnshu/Pictures/wallpaper.jpg
 #guake &
 #(sleep 30; slack) &
 #thunderbird&
+xmonad&
+taffybar&
 nm-applet&
 blueman-applet&
 #urxvtd --quiet --opendisplay --fork
