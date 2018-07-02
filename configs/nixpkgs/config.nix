@@ -16,6 +16,7 @@
               volnoti
               pavucontrol
               imagemagick
+              calibre
             ] ++ my_network_tools;
         };
 

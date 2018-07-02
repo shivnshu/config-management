@@ -10,6 +10,7 @@
         ./boot-configuration.nix
         ./network-configuration.nix
         ./X-configuration.nix
+        ./multi-glibc-locale-paths.nix # For locale
     ];
 
     # Select internationalisation properties.
@@ -22,6 +23,8 @@
     # Set your time zone.
     time.timeZone = "Asia/Kolkata";
 
+    nixpkgs.config.allowUnfree = true;
+
     # List packages installed in system profile. To search by name, run:
     # $ nix-env -qaP | grep wget
     environment.systemPackages = with pkgs; [
@@ -31,7 +34,7 @@
         blueman
         feh
         qemu
-        #rxvt_unicode
+        rxvt_unicode
     ];
 
     programs.wireshark.enable = true;
@@ -43,15 +46,15 @@
     # List services that you want to enable:
     services.emacs.enable = true;
 
-    #systemd.user.services."urxvtd" = {
-        #enable = true;
-        #description = "rxvt unicode daemon";
-        #wantedBy = [ "default.target" ];
-        #path = [ pkgs.rxvt_unicode ];
-        #serviceConfig.Restart = "always";
-        #serviceConfig.RestartSec = 2;
-        #serviceConfig.ExecStart = "${pkgs.rxvt_unicode}/bin/urxvtd -q -o";
-    #};
+    systemd.user.services."urxvtd" = {
+        enable = true;
+        description = "rxvt unicode daemon";
+        wantedBy = [ "default.target" ];
+        path = [ pkgs.rxvt_unicode ];
+        serviceConfig.Restart = "always";
+        serviceConfig.RestartSec = 2;
+        serviceConfig.ExecStart = "${pkgs.rxvt_unicode}/bin/urxvtd -q -o";
+    };
 
     # Sound
     hardware.pulseaudio.enable = true;

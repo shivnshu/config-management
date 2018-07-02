@@ -8,11 +8,9 @@
 # Load resources
 xrdb -merge .Xresources
 
-#eh --bg-scale /home/shivnshu/Pictures/wallpaper.jpg
+#feh --bg-scale /home/shivnshu/Pictures/wallpaper.jpg
 
-export TERMINAL=termite
-#export LC_ALL=C
-#export LOCALE_ARCHIVE="$(readlink ~/.nix-profile/lib/locale)/locale-archive"
+export TERMINAL=urxvtc
 
 # fix java issues
 #wmname LG3D
