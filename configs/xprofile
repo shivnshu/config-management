@@ -10,8 +10,6 @@ xrdb -merge .Xresources
 
 #feh --bg-scale /home/shivnshu/Pictures/wallpaper.jpg
 
-export TERMINAL=urxvtc
-
 # fix java issues
 #wmname LG3D
 
@@ -24,6 +22,6 @@ export TERMINAL=urxvtc
 #taffybar&
 #nm-applet&
 #blueman-applet&
-#urxvtd --quiet --opendisplay --fork
-
+urxvtd --quiet --opendisplay --fork
+export TERMINAL=urxvtc
 #sudo -b nohup nvidia-docker-plugin > /tmp/nvidia-docker.log

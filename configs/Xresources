@@ -13,7 +13,7 @@ URxvt*cursorBlink: true
 URxvt*underlineColor: yellow
 URxvt.font: xft:Dejavu Sans Mono for Powerline:size=14
 !URxvt.font: xft:Literation Mono Powerline:size=14
-URxvt.letterSpace: 0
+URxvt.letterSpace: 1
 URxvt*depth: 32
 URxvt*borderless: 1
 URxvt*scrollBar: false
@@ -22,8 +22,8 @@ URxvt*saveLines: 10000
 
 ! To implement clickable URLs
 URxvt.perl-ext-common:      default,matcher,clipboard,url-select,keyboard-select,clipboard-osc
-URxvt.url-launcher:         /usr/bin/env firefox
-URxvt.url-select.launcher:  /usr/bin/env firefox
+URxvt.url-launcher:         /usr/bin/env xdg-open
+URxvt.url-select.launcher:  /usr/bin/env xdg-open
 URxvt.url-select.underline: true
 URxvt.keysym.M-u:           perl:url-select:select_next
 URxvt.keysym.M-Escape:      perl:keyboard-select:activate
