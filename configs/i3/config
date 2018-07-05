@@ -197,7 +197,7 @@ bindsym Print exec bash -c "cd ~/Pictures && scrot"
 bar {
         position top
         #status_command i3status
-        status_command python ~/.config/i3/i3bar.py
+        status_command python2 ~/.config/i3/i3bar.py
         font pango: Source Code Pro for Powerline 9
 }
 

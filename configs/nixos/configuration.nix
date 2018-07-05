@@ -35,6 +35,8 @@
         feh
         qemu
         termite
+        gnome3.nautilus
+        gvfs
     ];
 
     programs.wireshark.enable = true;
@@ -45,6 +47,11 @@
 
     # List services that you want to enable:
     services.emacs.enable = true;
+    services.gnome3.gvfs.enable = true;
+    services.udisks2.enable = true;
+
+    # Set environments variables
+    environment.variables.GIO_EXTRA_MODULES = [ "${pkgs.gvfs}/lib/gio/modules" ];
 
     # Sound
     hardware.pulseaudio.enable = true;
@@ -58,6 +65,22 @@
     virtualisation.docker.enable = true;
     virtualisation.docker.enableOnBoot = true;
     virtualisation.libvirtd.enable = true;
+
+
+    fonts = {
+    	fontconfig = {
+        antialias = true;
+      };
+      enableFontDir = true;
+      enableGhostscriptFonts = true;
+      fonts = with pkgs; [
+      		dejavu_fonts
+			powerline-fonts
+			inconsolata
+			liberation_ttf
+			source-code-pro
+    	];
+	};
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.extraUsers.shivnshu = {

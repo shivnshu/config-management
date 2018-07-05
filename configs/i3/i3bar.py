@@ -1,9 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 import sys
-import time
 import os
 import json
+import psutil
 import time
 import string
 import thread
@@ -11,6 +11,8 @@ import subprocess as sp
 
 arr = []
 text = ''
+current_time = time.time()
+last_net_stats = psutil.net_io_counters()
 
 def LOG(content):
     pass
@@ -32,7 +34,7 @@ def battery():
     else:
         dict['color'] = '#ff0000'
 
-    dict["full_text"] = '{0:^18}'.format(status.replace('\n', '') + ' ('+percent[:-1]+'%)')
+    dict["full_text"] = '{0:^15}'.format(status.replace('\n', '') + ' ('+percent[:-1]+'%)')
     dict["name"] = 'bat'
     dict["instance"] = '0'
     return dict
@@ -101,7 +103,8 @@ def connection(fullName, abbrv):
     ans = sp.Popen(["sed", "-En",
         r"s/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p"],
         stdin=grp.stdout, stdout=sp.PIPE)
-    ip = str(ans.stdout.read()).replace("\n", '')
+    ip = str(ans.stdout.read()).replace("\n", ', ')
+    ip = ip[:-2]
     dict = {'name': 'wlan'}
     dict["instance"] = "0"
     if '.' in ip:
@@ -110,6 +113,48 @@ def connection(fullName, abbrv):
     else:
         dict["full_text"] = '{:^20}'.format(abbrv + ": --.--.--.--" )
         dict['color'] = '#ff4411'
+    return dict
+
+def cpu():
+    percentage = str(psutil.cpu_percent()) + "%"
+    text = "CPU: " + percentage
+    dict = {}
+    dict["full_text"] = u'{:^12}'.format(text)
+    dict["instance"] = "0"
+    return dict
+
+def mem():
+    percentage = str(psutil.virtual_memory().percent)
+    percentage += "%"
+    text = "MEM: " + percentage
+    dict = {}
+    dict["full_text"] = u'{:^12}'.format(text)
+    dict["instance"] = "0"
+    return dict
+
+def net_stats():
+    global current_time
+    global last_net_stats
+    new_time = time.time()
+    counter = psutil.net_io_counters()
+    current_stats = (counter.bytes_sent, counter.bytes_recv)
+
+    download_speed = (current_stats[1] - last_net_stats[1]) / 1000.0
+    download_speed = download_speed / (new_time - current_time)
+    download_speed = "{0:0.1f}".format(download_speed)
+
+    upload_speed = (current_stats[0] - last_net_stats[0]) / 1000.0
+    upload_speed = upload_speed / (new_time - current_time)
+    upload_speed = "{0:0.1f}".format(upload_speed)
+
+    download_speed = u"\u25bC " + str(download_speed) + " kb/s"
+    upload_speed = u"\u25b2 " + str(upload_speed) + " kb/s"
+    text = download_speed + " " + upload_speed
+    dict = {}
+    dict["full_text"] = u'{:^30}'.format(text)
+    dict["instance"] = "0"
+    current_time = time.time()
+    last_net_stats = current_stats
     return dict
 
 def repaint():
@@ -124,6 +169,9 @@ def create(arr):
     # arr.append({'full_text': str(text)})
     # arr.append(connection('enp', 'E'))
     arr.append(connection('wlp', 'W'))
+    arr.append(net_stats())
+    arr.append(cpu())
+    arr.append(mem())
     arr.append(bright())
     arr.append(sound())
     arr.append(battery())

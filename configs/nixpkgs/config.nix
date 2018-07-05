@@ -7,13 +7,13 @@
 
         rxvt_unicode-with-plugins = super.rxvt_unicode-with-plugins.override { plugins = [ self.urxvt_perls ]; };
 
-        all = self.buildEnv {
+        all = with self; buildEnv {
             name = "all";
-            paths = with self; [
+            paths = [
               usbutils weechat gdb xdg_utils
               neovim rofi vlc firefox emacs compton
-              termite tmux python3 python36Packages.ipython
-              gnupg gnome3.nautilus gnome3.gedit deluge evince tcpdump
+              termite tmux
+              gnupg gnome3.gedit deluge evince tcpdump
               virtmanager scrot
               pamixer
               volnoti
@@ -21,6 +21,7 @@
               imagemagick
               calibre
               xsel
+              gparted
             ] 
             ++ my_network_tools
             ++ my_overriden_tools;
@@ -34,6 +35,30 @@
             rxvt_unicode-with-plugins 
         ];
 
+        my_python_env = with self; buildEnv {
+            name = "my_python_env";
+            paths = [
+                        (with python36Packages; python.buildEnv.override {
+                            extraLibs = [
+                                ipython
+                                psutil
+                                setuptools
+                                numpy
+                                jedi
+                                flake8
+                                pytest
+                                isort
+                                yapf
+                            ];
+                        })
+                        (with python27Packages; python.buildEnv.override {
+                            extraLibs = [
+                                psutil
+                            ];
+                        })
+ 
+            ];
+        };
     };
 
 }
