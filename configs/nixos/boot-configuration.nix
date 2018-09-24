@@ -10,7 +10,7 @@
     	version = 2;
     	efiSupport = true;
     	configurationLimit = 4;
-    	default = 1;
+        default = 0;
     	extraEntries =
       		''
       		menuentry "ArchLinux" {

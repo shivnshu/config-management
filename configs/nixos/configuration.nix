@@ -35,8 +35,9 @@
         feh
         qemu
         termite
+        ntfs3g
         gnome3.nautilus
-        gvfs
+        busybox
     ];
 
     programs.wireshark.enable = true;
@@ -63,9 +64,23 @@
 
     # Virtualisation
     virtualisation.docker.enable = true;
-    virtualisation.docker.enableOnBoot = true;
+    virtualisation.docker.enableOnBoot = false;
     virtualisation.libvirtd.enable = true;
 
+    # MySQL
+    #services.mysql.enable = true;
+    #services.mysql.package = pkgs.mysql;
+    #services.mysql.dataDir = "/var/db";
+
+    #systemd.services.mysql.serviceConfig.Restart = "on-failure";
+    #systemd.services.mysql.serviceConfig.RestartSec = "10s";
+
+    #services.mysqlBackup.enable = true;
+    #services.mysqlBackup.user = "shivnshu";
+    #services.mysqlBackup.databases = [ "cs252" ];
+
+    #services.mongodb.enable = true;
+    #services.mongodb.bind_ip = "0.0.0.0";
 
     fonts = {
     	fontconfig = {

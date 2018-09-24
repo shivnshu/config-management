@@ -52,6 +52,9 @@ directories:
     location: $HOME/.zprezto
 
 files:
+  - name: gdbinit
+    placed: configs/gdbinit
+    location: $HOME/.gdbinit
   - name: xinitrc
     placed: configs/xinitrc
     location: $HOME/.xinitrc
@@ -79,6 +82,9 @@ files:
   - name: zshrc
     placed: configs/zsh/zshrc
     location: $HOME/.zshrc
+  - name: spacemacs
+    placed: configs/spacemacs
+    location: $HOME/.spacemacs
 
 post:
   - name: finish

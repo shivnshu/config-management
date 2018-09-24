@@ -6,6 +6,7 @@ configs/vim
 configs/emacs
 configs/xmonad
 configs/gdb-peda
+configs/zsh/zprezto
 
 configs/nixos/*
 !configs/nixos/*.nix

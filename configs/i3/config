@@ -10,7 +10,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-set $sup Mod1
+set $alt Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -32,7 +32,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
-bindsym $sup+Return exec emacsclient -c -a ""
+bindsym $alt+Return exec emacsclient -c -a ""
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -180,8 +180,8 @@ assign [class="Nautilus"] $ws4
 workspace_auto_back_and_forth yes
 
 # Volume and backlight control
-bindsym XF86AudioRaiseVolume exec pamixer --allow-boost -i 20
-bindsym XF86AudioLowerVolume exec pamixer --allow-boost -d 20
+bindsym XF86AudioRaiseVolume exec pamixer --allow-boost -i 10
+bindsym XF86AudioLowerVolume exec pamixer --allow-boost -d 10
 bindsym XF86MonBrightnessUp exec light -A 10
 bindsym XF86MonBrightnessDown exec light -U 10
 
