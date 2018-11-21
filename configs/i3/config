@@ -172,7 +172,7 @@ hide_edge_borders both
 
 # Assignments
 assign [class="Firefox"] $ws1
-assign [class="URxvt"] $ws2
+#assign [class="URxvt"] $ws1
 assign [class="Termite"] $ws2
 assign [class="Emacs"] $ws3
 assign [class="Nautilus"] $ws4

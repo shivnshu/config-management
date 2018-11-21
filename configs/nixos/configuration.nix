@@ -67,10 +67,15 @@
     virtualisation.docker.enableOnBoot = false;
     virtualisation.libvirtd.enable = true;
 
+    # Synergy
+    services.synergy.server.enable = true;
+    services.synergy.server.address = "0.0.0.0";
+    services.synergy.server.configFile = "/home/shivnshu/config-management/configs/synergy-server.conf";
+
     # MySQL
     #services.mysql.enable = true;
     #services.mysql.package = pkgs.mysql;
-    #services.mysql.dataDir = "/var/db";
+    #services.mysql.dataDir = "/var/db/mysql";
 
     #systemd.services.mysql.serviceConfig.Restart = "on-failure";
     #systemd.services.mysql.serviceConfig.RestartSec = "10s";
@@ -81,6 +86,7 @@
 
     #services.mongodb.enable = true;
     #services.mongodb.bind_ip = "0.0.0.0";
+    #services.mongodb.dbpath = "/var/db/mongodb";
 
     fonts = {
     	fontconfig = {

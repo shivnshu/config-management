@@ -12,3 +12,5 @@ source ~/.zprezto/init.zsh
 export CONFIG_FOLDER=$HOME/config-management/configs
 export EDITOR="nvim"
 export VISUAL="nvim"
+
+unalias sl

@@ -53,11 +53,16 @@
               tree
             ] 
             ++ my_network_tools
+            ++ my_fancy_stuff
             ++ my_overriden_tools;
         };
 
         my_network_tools = with self; [
             wirelesstools nmap dnsutils
+        ];
+
+        my_fancy_stuff = with self; [
+            cowsay lolcat figlet sl
         ];
 
         my_overriden_tools = [
