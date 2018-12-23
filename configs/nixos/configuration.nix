@@ -68,9 +68,9 @@
     virtualisation.libvirtd.enable = true;
 
     # Synergy
-    services.synergy.server.enable = true;
-    services.synergy.server.address = "0.0.0.0";
-    services.synergy.server.configFile = "/home/shivnshu/config-management/configs/synergy-server.conf";
+    #services.synergy.server.enable = true;
+    #services.synergy.server.address = "0.0.0.0";
+    #services.synergy.server.configFile = "/home/shivnshu/config-management/configs/synergy-server.conf";
 
     # MySQL
     #services.mysql.enable = true;
@@ -87,6 +87,15 @@
     #services.mongodb.enable = true;
     #services.mongodb.bind_ip = "0.0.0.0";
     #services.mongodb.dbpath = "/var/db/mongodb";
+
+    services.postgresql.enable = true;
+    services.postgresql.authentication = pkgs.lib.mkForce ''
+        # Generated file; do not edit!
+        # TYPE  DATABASE        USER            ADDRESS                 METHOD
+        local   all             all                                     trust
+        host    all             all             127.0.0.1/32            trust
+        host    all             all             ::1/128                 trust
+    '';
 
     fonts = {
     	fontconfig = {

@@ -77,6 +77,7 @@
                                 ipython
                                 psutil
                                 setuptools
+                                requests
                                 numpy
                                 jedi
                                 flake8

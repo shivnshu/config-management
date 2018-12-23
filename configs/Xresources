@@ -11,7 +11,7 @@ rofi.color-urgent: #393939, #f3843d, #393939, #268bd2, #ffc39c
 URxvt*buffered: true
 URxvt*cursorBlink: true
 URxvt*underlineColor: yellow
-URxvt.font: xft:Dejavu Sans Mono for Powerline:size=14
+URxvt.font: xft:Dejavu Sans Mono for Powerline:size=16
 !URxvt.font: xft:Source Code Pro for Powerline:size=14
 URxvt.letterSpace: 1
 URxvt*depth: 32
