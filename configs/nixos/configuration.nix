@@ -67,6 +67,8 @@
     virtualisation.docker.enableOnBoot = false;
     virtualisation.libvirtd.enable = true;
 
+    services.locate.enable = true;
+
     # Synergy
     #services.synergy.server.enable = true;
     #services.synergy.server.address = "0.0.0.0";
@@ -89,11 +91,12 @@
     #services.mongodb.dbpath = "/var/db/mongodb";
 
     services.postgresql.enable = true;
+    services.postgresql.enableTCPIP = true;
     services.postgresql.authentication = pkgs.lib.mkForce ''
         # Generated file; do not edit!
         # TYPE  DATABASE        USER            ADDRESS                 METHOD
         local   all             all                                     trust
-        host    all             all             127.0.0.1/32            trust
+        host    all             all             0.0.0.0/0            trust
         host    all             all             ::1/128                 trust
     '';
 

@@ -176,6 +176,7 @@ assign [class="Firefox"] $ws1
 assign [class="Termite"] $ws2
 assign [class="Emacs"] $ws3
 assign [class="Nautilus"] $ws4
+assign [class="Slack"] $ws6
 
 workspace_auto_back_and_forth yes
 

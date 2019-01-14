@@ -25,3 +25,4 @@ xrdb -merge .Xresources
 urxvtd --quiet --opendisplay --fork
 export TERMINAL=urxvtc
 #sudo -b nohup nvidia-docker-plugin > /tmp/nvidia-docker.log
+xset s off && xset -dpms

@@ -17,6 +17,9 @@ export VISUAL="nvim"
 export POSTGRES_USER=postgres
 export POSTGRES_PASSWORD=postgres
 export POSTGRES_DB=blindate
+export POSTGRES_TEST_DB=blindate_test
+export LOCAL_PORT=8000
+export PATH=/home/shivnshu/google-cloud-sdk/bin:$PATH
 
 unalias sl
 
