@@ -21,6 +21,8 @@ export POSTGRES_TEST_DB=blindate_test
 export LOCAL_PORT=8000
 export PATH=/home/shivnshu/google-cloud-sdk/bin:$PATH
 
-unalias sl
-
 fortune -s | cowsay
+
+# For gcloud
+source /home/shivnshu/google-cloud-sdk/completion.zsh.inc
+source <(kubectl completion zsh)

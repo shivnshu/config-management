@@ -303,7 +303,7 @@ values."
    ;; (default nil)
    dotspacemacs-whitespace-cleanup nil
 
-    dotspacemacs-default-font '("Source Code Pro" :size 20 :weight normal :width normal :powerline-offset 2)
+    dotspacemacs-default-font '("Source Code Pro" :size 18 :weight normal :width normal :powerline-offset 2)
 
    ))
 
@@ -314,6 +314,20 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+  (defun my-setup-indent (n)
+    ;; java/c/c++
+    (setq c-basic-offset n)
+    ;; web development
+    (setq coffee-tab-width n) ; coffeescript
+    (setq javascript-indent-level n) ; javascript-mode
+    (setq js-indent-level n) ; js-mode
+    (setq js2-basic-offset n) ; js2-mode, in latest js2-mode, it's alias of js-indent-level
+    (setq web-mode-markup-indent-offset n) ; web-mode, html tag in html file
+    (setq web-mode-css-indent-offset n) ; web-mode, css in html file
+    (setq web-mode-code-indent-offset n) ; web-mode, js code in html file
+    (setq css-indent-offset n) ; css-mode
+    )
+  (my-setup-indent 2) ;
   )
 
 (defun dotspacemacs/user-config ()
@@ -323,8 +337,8 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  (setq go-tab-width 4);
-  (setq c-basic-offset 4);
+  (setq go-tab-width 2);
+  (setq c-basic-offset 2);
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -338,8 +352,8 @@ you should place your code here."
  '(package-selected-packages
    (quote
     (toml-mode racer flycheck-rust cargo rust-mode ob-elixir flycheck-mix flycheck-credo alchemist elixir-mode yaml-mode phpunit phpcbf php-extras php-auto-yasnippets drupal-mode php-mode unfill org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download mwim htmlize gnuplot git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ powerline spinner hydra parent-mode pkg-info epl flx treepy graphql anzu evil goto-chg undo-tree bind-map bind-key packed f dash s helm-core async popup highlight projectile helm avy tide typescript-mode disaster company-c-headers cmake-mode clang-format nix-mode helm-nixos-options company-nixos-options nixos-options iedit smartparens web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc company-tern tern coffee-mode go-guru go-eldoc company-go go-mode mmm-mode markdown-toc markdown-mode gh-md noflet ensime sbt-mode scala-mode web-mode tagedit slim-mode scss-mode sass-mode pug-mode helm-css-scss haml-mode emmet-mode company-web web-completion-data smeargle orgit magit-gitflow helm-gitignore helm-company helm-c-yasnippet gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link fuzzy flycheck-pos-tip pos-tip flycheck evil-magit magit magit-popup git-commit ghub with-editor company-statistics company-anaconda company auto-yasnippet yasnippet ac-ispell auto-complete yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional helm-pydoc cython-mode anaconda-mode pythonic ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line)))
- '(standard-indent 4)
- '(tab-width 4))
+ '(standard-indent 2)
+ '(tab-width 2))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

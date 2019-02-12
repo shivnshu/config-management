@@ -5,6 +5,8 @@
 	services.xserver.enable = true;
 	services.xserver.autorun = true;
 	services.xserver.videoDrivers = ["xf86-video-nouveau"];
+  #services.xserver.videoDrivers = [ "nvidia" ];
+
 	services.xserver.layout = "us";
 
 	services.xserver.windowManager.i3.enable = true;
