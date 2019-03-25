@@ -4,6 +4,7 @@ setopt EXTENDED_GLOB
 alias vi=nvim
 alias vim=nvim
 alias svim="sudo -E nvim"
+alias cat=bat
 
 source ~/.zprezto/init.zsh
 
@@ -26,3 +27,5 @@ fortune -s | cowsay
 # For gcloud
 source /home/shivnshu/google-cloud-sdk/completion.zsh.inc
 source <(kubectl completion zsh)
+
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
